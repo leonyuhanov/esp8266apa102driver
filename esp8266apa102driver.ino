@@ -2,11 +2,12 @@
   This is intended for use with a NodeMCU V0.9 & V1.0 Modules or any ESP8266 Module
   This will drive a APA102/102C strip
   This code is intende to be used with 1 extra Pixel connected as close as possible to the ESP8266 as a booster pixel
+  Please hook up the booster like this -> http://www.elec-tron.org/wp-content/uploads/2015/12/nodetoapaq102.png
   The ESP8266 MUST be driven with +5v for this to work
   
   Pinout for connectivity:
   
-  Gnd-> Gound Pin of APA102 strip
+  Gnd-> Ground Pin of APA102 strip
   D5 -> Clock pin of APA102 Strip
   D7 -> Data Pin of APA102 Strip
   VIN -> +5v pin of APA102 Strip
@@ -32,7 +33,6 @@ const short int frameLength = ((2+numLeds)*bytesPerLED)+endFrames;
 byte LEDs[frameLength];
 short int ledIndex=0;
 byte maxBrightness = 255;
-short int colIndex=0;
 byte currentCol[3] = {0,0,0};
 
 void setup() 
